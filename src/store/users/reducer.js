@@ -6,19 +6,18 @@ const initialState = {
 };
 
 export default function feedSliceReducer(state = initialState, action) {
-  switch (action.type) {
-    case START_LOADING: {
+  const { type, payload } = action;
+  switch (type) {
+    case START_LOADING:
       return {
         ...state,
         loading: true,
       };
-    }
-    case SET_USERS: {
+    case SET_USERS:
       return {
         loading: false,
-        users: [...action.payload],
+        users: [...payload],
       };
-    }
     default: {
       return state;
     }

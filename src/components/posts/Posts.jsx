@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectPosts } from "../../store/posts/selector";
 import { fetchPosts } from "../../store/posts/actions";
 import { fetchUsers } from "../../store/users/actions";
+import { Link } from "react-router-dom";
 
 export const Posts = () => {
   const dispatch = useDispatch();
@@ -11,18 +12,20 @@ export const Posts = () => {
   useEffect(() => {
     dispatch(fetchPosts);
     dispatch(fetchUsers);
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
       <h1>Posts</h1>
-      {posts.map((post) => (
-        <div key={post.id}>
-          <h3>{post.title}</h3>
-          <p>{post.user?.name}</p>
-          <p>{post.body}</p>
-        </div>
-      ))}
+      {posts.length !== 0 &&
+        posts.map((post) => (
+          <div key={post.id}>
+            <h3>{post.title}</h3>
+            <p>{post.user?.name}</p>
+            <p>{post.body}</p>
+            <Link to={`/posts/${post.id}`}>Details</Link>
+          </div>
+        ))}
     </div>
   );
 };

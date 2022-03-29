@@ -6,3 +6,12 @@ export const selectPosts = (reduxState) => {
     };
   });
 };
+
+export const selectPost = (reduxState) => {
+  return {
+    ...reduxState.posts.post,
+    user: reduxState.users.users.find(
+      (user) => user.id === reduxState.posts?.post?.userId
+    ),
+  };
+};
