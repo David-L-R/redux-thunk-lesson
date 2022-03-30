@@ -1,8 +1,9 @@
-import { SET_POSTS, POSTS_START_LOADING } from "./types";
+import { SET_POSTS, POSTS_START_LOADING, SET_POST } from "./types";
 
 const initialState = {
   loading: false,
   posts: [],
+  post: null,
 };
 
 export default function feedSliceReducer(state = initialState, action) {
@@ -18,6 +19,12 @@ export default function feedSliceReducer(state = initialState, action) {
         ...state,
         loading: false,
         posts: payload,
+      };
+    case SET_POST:
+      return {
+        ...state,
+        loading: false,
+        post: payload,
       };
     default: {
       return state;
