@@ -2,7 +2,9 @@
 
 # Redux-thunks
 
-<img src="./public/middleware.gif" width="50%"/>
+<img width="50%" alt="architecture of redux - overview" src="https://user-images.githubusercontent.com/31222514/160870591-c2282f52-9453-4bb1-be99-66032a9009fc.png">
+
+<img src="./public/middleware.gif" width="50%" alt="process of redux"/>
 
 - Create async actions
 
