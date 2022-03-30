@@ -1,7 +1,7 @@
 import axios from "axios";
 import { config } from "../../config";
 import { SET_USERS } from "../users/types";
-import { SET_POSTS, START_LOADING } from "./types";
+import { SET_POSTS, POSTS_START_LOADING } from "./types";
 
 // Component -> fetchPosts
 // fetching from backend (axios)
@@ -9,7 +9,7 @@ import { SET_POSTS, START_LOADING } from "./types";
 export const fetchPosts = async (dispatch, getState) => {
   // set a loader
   dispatch({
-    type: START_LOADING,
+    type: POSTS_START_LOADING,
   });
   // fetch posts
   const posts = await axios.get(`${config.API_URL}/posts`);

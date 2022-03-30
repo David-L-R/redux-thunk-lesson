@@ -1,1 +1,2 @@
 export const SET_USERS = "SET_USERS";
+export const USERS_START_LOADING = "USERS_START_LOADING";

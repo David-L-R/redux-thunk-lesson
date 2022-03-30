@@ -1,4 +1,4 @@
-import { SET_POSTS, START_LOADING } from "./types";
+import { SET_POSTS, POSTS_START_LOADING } from "./types";
 
 const initialState = {
   loading: false,
@@ -8,7 +8,7 @@ const initialState = {
 export default function feedSliceReducer(state = initialState, action) {
   const { type, payload } = action;
   switch (type) {
-    case START_LOADING:
+    case POSTS_START_LOADING:
       return {
         ...state,
         loading: true,

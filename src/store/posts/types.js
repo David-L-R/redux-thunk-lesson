@@ -1,2 +1,2 @@
 export const SET_POSTS = "SET_POSTS";
-export const START_LOADING = "START_LOADING";
+export const POSTS_START_LOADING = "POSTS_START_LOADING";
